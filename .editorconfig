@@ -1,11 +1,12 @@
-root = true
+droot = true
 
 [*]
+end_of_line = lf
 charset = utf-8
 indent_size = tab
-trim_trailing_whitespace = true
-insert_final_newline = false
+trim_trailing_whitespace = true # issues: files.trimTrailingWhitespace config from vs code must be unchecked
+insert_final_newline = false # issues: files.insertFinalNewLine config from vs code must be unchecked
 
-[*.csproj]
+[*.{csproj,sln}]
 indent_style = space
 indent_size = 2

@@ -8,10 +8,20 @@ Log.Logger = new LoggerConfiguration()
 
 Log.Information("Hello, world!");
 
+// use {@} to render the objects in json format
+var sensorInput = new { Latitude = 25, Longitude = 134, Point = new { Value = 0.344432002 } };
+Log.Information("Processing {@SensorInput}", sensorInput);
+Log.Information("Procesisng {SensorInput}", sensorInput);
+
+// use {$} to render the types of objects
+var unknown = new[] { 1, 2, 3 };
+Log.Information("Received {$Type}", unknown);
+
 short x = 10, y = 0;
 
 try
 {
+    // use {} to render the primitive type values
     Log.Debug("Dividing {A} by {B}", x, y);
     Console.WriteLine(x / y);
 }
